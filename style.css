@@ -1,0 +1,207 @@
+/* === colores === */
+/* === media queries === */
+/* === mixins === */
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4em; }
+
+h1, h2 {
+  font-weight: bold; }
+
+h1 {
+  font-size: 24px; }
+
+h2 {
+  font-size: 18px; }
+
+body {
+  position: relative; }
+
+header, footer {
+  background: #ce0b10;
+  width: 100%; }
+
+header {
+  height: 50px; }
+
+footer {
+  height: 150px;
+  position: absolute;
+  bottom: 0; }
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.container {
+  max-width: 992px;
+  padding: 10px 10px 160px;
+  margin: 0 auto; }
+
+.mensaje-checkout {
+  text-align: center; }
+  @media (min-width: 992px) {
+    .mensaje-checkout {
+      text-align: left;
+      margin: 20px 0 30px; } }
+
+.sprite:after {
+  background-image: url("sprite.png");
+  background-image: url("sprite.svg");
+  background-size: 1894px 358px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  content: ''; }
+
+@media (min-width: 992px) {
+  .metodo-pago,
+  .datos-envio-y-compra {
+    display: inline-block;
+    float: left; } }
+
+.metodo-pago {
+  width: 284px;
+  margin: 0 auto 35px; }
+  @media (min-width: 992px) {
+    .metodo-pago {
+      width: 33.3%;
+      margin: 0; } }
+  .metodo-pago h2 {
+    font-size: 22px; }
+    @media (min-width: 992px) {
+      .metodo-pago h2 {
+        margin-top: 10px; } }
+  .metodo-pago .error {
+    margin-bottom: 30px; }
+    .metodo-pago .error div {
+      color: red; }
+      .metodo-pago .error div:first-child {
+        font-weight: bold;
+        padding-bottom: 10px; }
+  .metodo-pago .metodos {
+    display: block;
+    width: 280px;
+    height: 70px;
+    margin-bottom: 15px; }
+    .metodo-pago .metodos .metodo {
+      position: relative;
+      display: inline-block;
+      width: 25%;
+      height: 100%;
+      float: left; }
+      .metodo-pago .metodos .metodo:after {
+        -webkit-transform: translate(-50%, -50%) scale(0.2);
+        -ms-transform: translate(-50%, -50%) scale(0.2);
+        transform: translate(-50%, -50%) scale(0.2); }
+      .metodo-pago .metodos .metodo.oxxo:after {
+        background-position: -906px -204px;
+        width: 230px;
+        height: 121px; }
+      .metodo-pago .metodos .metodo.oxxo.seleccionado:after, .metodo-pago .metodos .metodo.oxxo:hover:after {
+        background-position: -905px -25px; }
+      .metodo-pago .metodos .metodo.credito:after {
+        background-position: -1411px -193px;
+        width: 177px;
+        height: 140px; }
+      .metodo-pago .metodos .metodo.credito.seleccionado:after, .metodo-pago .metodos .metodo.credito:hover:after {
+        background-position: -1412px -12px; }
+      .metodo-pago .metodos .metodo.paypal:after {
+        background-position: -550px -218px;
+        width: 312px;
+        height: 88px; }
+      .metodo-pago .metodos .metodo.paypal.seleccionado:after, .metodo-pago .metodos .metodo.paypal:hover:after {
+        background-position: -550px -39px; }
+      .metodo-pago .metodos .metodo.efectivo:after {
+        background-position: -1190px -194px;
+        width: 165px;
+        height: 145px; }
+      .metodo-pago .metodos .metodo.efectivo.seleccionado:after, .metodo-pago .metodos .metodo.efectivo:hover:after {
+        background-position: -1191px -15px; }
+  .metodo-pago .detalles-tarjeta {
+    display: none; }
+    .metodo-pago .detalles-tarjeta > div {
+      margin-bottom: 10px; }
+    .metodo-pago .detalles-tarjeta #expiracion-mes,
+    .metodo-pago .detalles-tarjeta #expiracion-anio,
+    .metodo-pago .detalles-tarjeta #cvv {
+      text-align: center; }
+    .metodo-pago .detalles-tarjeta #expiracion-mes,
+    .metodo-pago .detalles-tarjeta #expiracion-anio {
+      width: 25px; }
+    .metodo-pago .detalles-tarjeta #cvv {
+      width: 30px; }
+    .metodo-pago .detalles-tarjeta #confirmar {
+      background: #3f963c;
+      border: none;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: bold;
+      padding: 5px 10px;
+      margin-top: 15px; }
+    .metodo-pago .detalles-tarjeta .tipo-tarjeta {
+      position: relative;
+      padding: 10px 30px; }
+      .metodo-pago .detalles-tarjeta .tipo-tarjeta.visa:after, .metodo-pago .detalles-tarjeta .tipo-tarjeta.mastercard:after, .metodo-pago .detalles-tarjeta .tipo-tarjeta.amex:after {
+        -webkit-transform: translate(-50%, -50%) scale(0.2);
+        -ms-transform: translate(-50%, -50%) scale(0.2);
+        transform: translate(-50%, -50%) scale(0.2); }
+      .metodo-pago .detalles-tarjeta .tipo-tarjeta.visa:after {
+        background-position: 0 0;
+        width: 245px;
+        height: 170px; }
+      .metodo-pago .detalles-tarjeta .tipo-tarjeta.mastercard:after {
+        background-position: -244px -38px;
+        width: 265px;
+        height: 90px; }
+      .metodo-pago .detalles-tarjeta .tipo-tarjeta.amex:after {
+        background-position: -1666px -30px;
+        width: 187px;
+        height: 121px; }
+
+@media (min-width: 992px) {
+  .datos-envio-y-compra {
+    width: calc(66.6% - 50px);
+    margin-left: 50px; } }
+.datos-envio-y-compra h2 {
+  font-style: italic; }
+.datos-envio-y-compra .datos-envio {
+  margin-bottom: 15px; }
+  .datos-envio-y-compra .datos-envio .dato-envio {
+    padding-bottom: 3px; }
+    .datos-envio-y-compra .datos-envio .dato-envio span:first-child {
+      color: #777;
+      font-style: italic; }
+.datos-envio-y-compra .resumen-compra {
+  margin-bottom: 35px; }
+  .datos-envio-y-compra .resumen-compra .item {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #777; }
+    .datos-envio-y-compra .resumen-compra .item .dato-item {
+      padding-bottom: 3px; }
+      .datos-envio-y-compra .resumen-compra .item .dato-item span:first-child {
+        color: #777;
+        font-style: italic; }
+  .datos-envio-y-compra .resumen-compra .total span {
+    font-weight: bold; }
+    @media (min-width: 992px) {
+      .datos-envio-y-compra .resumen-compra .total span {
+        font-size: 16px; } }
+    .datos-envio-y-compra .resumen-compra .total span:nth-child(2) {
+      font-size: 16px;
+      color: #3f963c; }
+      @media (min-width: 992px) {
+        .datos-envio-y-compra .resumen-compra .total span:nth-child(2) {
+          font-size: 18px; } }
+
+/*# sourceMappingURL=style.css.map */

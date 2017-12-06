@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header></header>
+
+    <div class="container clearfix">
+        <h1 class="mensaje-checkout">&iexcl;Un &uacute;ltimo paso en tu compra!</h1>
+
+        <section class="metodo-pago">
+            <h2>Elige un m&eacute;todo de pago</h2>
+
+            <div class="metodos">
+                <span class="sprite metodo oxxo"></span>
+                <span class="sprite metodo credito"></span>
+                <span class="sprite metodo paypal"></span>
+                <span class="sprite metodo efectivo"></span>
+            </div>
+
+            <div class="error"></div>
+
+            <form onsubmit="return validar()" class="detalles-tarjeta">
+                <div class="numero-tarjeta">
+                    <label for="numero">N&uacute;m. tarjeta</label>
+                    <input type="text"
+                        id="numero"
+                        maxlength="16"
+                        size="16"
+                        pattern="\d{16}"
+                        title="dieciseis digitos"
+                        required>
+                    <span class="tipo-tarjeta sprite"></span>
+                </div>
+
+                <div class="titular-tarjeta">
+                    <label for="titular">Titular</label>
+                    <input type="text"
+                        id="titular"
+                        size="21"
+                        required>
+                </div>
+
+                <div class="expiracion-tarjeta">
+                    <label for="expiracion-mes">Expira</label>
+                    <input type="text"
+                        id="expiracion-mes"
+                        maxlength="2"
+                        size="2"
+                        pattern="\d{2}"
+                        placeholder="mm"
+                        title="numeros entre 01 y 12"
+                        required>
+                    <span>&nbsp;/&nbsp;</span>
+                    <input type="text"
+                        id="expiracion-anio"
+                        maxlength="2"
+                        size="2"
+                        pattern="\d{2}"
+                        placeholder="aa"
+                        title="numeros entre 17 y 99"
+                        required>
+                </div>
+
+                <div class="cvv-tarjeta">
+                    <label for="cvv">CVV</label>
+                    <input type="text"
+                        id="cvv"
+                        maxlength="3"
+                        size="3"
+                        pattern="\d{3}"
+                        title="tres digitos"
+                        required>
+                </div>
+
+                <button type="submit" id="confirmar">Confirmar</button>
+            </form>
+
+        </section>
+
+        <div class="datos-envio-y-compra">
+            <section class="datos-envio">
+                <h2>Datos de env&iacute;o</h2>
+
+                <div class="dato-envio">
+                    <span>Nombre: </span>
+                    <span>Empresa X Y Z</span>
+                </div>
+
+                <div class="dato-envio">
+                    <span>Direcci&oacute;n: </span>
+                    <span>Calle R&iacute;o Lerma 4, Piso 6, Colonia Cuauht&eacute;moc, CP 53000, Ciudad
+    de M&eacute;xico</span>
+                </div>
+
+                <div class="dato-envio">
+                    <span>Tel&eacute;fono: </span>
+                    <span>0445533678909</span>
+                </div>
+            </section>
+
+            <section class="resumen-compra">
+                <h2>Resumen de compra</h2>
+
+                <div class="item">
+                    <div class="dato-item">
+                        <span>Item: </span>
+                        <span>ASUS ZenPad Z300M-A2-GR 16GB Negro, Gris - Tablet (Tableta de tama&ntilde;o
+        completo, IEEE 802.11n, Android, Pizarra, Android 6.0, Negro, Gris)</span>
+                    </div>
+
+                    <div class="dato-item">
+                        <span>Precio: </span>
+                        <span>$3,380.95</span>
+                    </div>
+
+                    <div class="dato-item">
+                        <span>Cantidad: </span>
+                        <span>2</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="dato-item">
+                        <span>Item: </span>
+                        <span>Lenovo TAB3 Essential - ZA0R0029US 7" Android Tablet</span>
+                    </div>
+
+                    <div class="dato-item">
+                        <span>Precio: </span>
+                        <span>$1,495.31</span>
+                    </div>
+
+                    <div class="dato-item">
+                        <span>Cantidad: </span>
+                        <span>1</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="dato-item">
+                        <span>Item: </span>
+                        <span>Star Wars Figuras de Acci&oacute;n Star Wars Black Series, AT-AT Driver, 6"</span>
+                    </div>
+
+                    <div class="dato-item">
+                        <span>Precio: </span>
+                        <span>$449.00</span>
+                    </div>
+
+                    <div class="dato-item">
+                        <span>Cantidad: </span>
+                        <span>1</span>
+                    </div>
+                </div>
+
+                <div class="total">
+                    <span>Total: </span>
+                    <span>$8,706.21</span>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

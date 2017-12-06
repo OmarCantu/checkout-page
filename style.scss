@@ -1,0 +1,313 @@
+/* === colores === */
+$rojo: #ce0b10; // header, footer
+$gris: #777; // etiquetas
+$verde: #3f963c; // precio total
+
+/* === media queries === */
+$tablet-width: 768px;
+$desktop-width: 992px;
+
+/* === mixins === */
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+      @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+      @content;
+  }
+}
+@mixin border-radius ($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.4em;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+body {
+    position: relative;
+}
+
+header, footer {
+    background: $rojo;
+    width: 100%;
+}
+
+header {
+    height: 50px;
+}
+
+footer {
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.container {
+    max-width: 992px;
+    padding: 10px 10px 160px;
+    margin: 0 auto;
+}
+
+.mensaje-checkout {
+    text-align: center;
+    @include desktop {
+        text-align: left;
+        margin: 20px 0 30px;
+    }
+}
+
+.sprite {
+    &:after {
+        background-image: url('sprite.png');
+        background-image: url('sprite.svg');
+        background-size: 1894px 358px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        content: '';
+    }
+}
+
+.metodo-pago,
+.datos-envio-y-compra {
+    @include desktop {
+        display: inline-block;
+        float: left;
+    }
+}
+
+.metodo-pago {
+    width: 284px;
+    margin: 0 auto 35px;
+    @include desktop {
+        width: 33.3%;
+        margin: 0;
+    }
+    h2 {
+        font-size: 22px;
+        @include desktop {
+            margin-top: 10px;
+        }
+    }
+    .error {
+        margin-bottom: 30px;
+        div {
+            color: red;
+            &:first-child {
+                font-weight: bold;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .metodos {
+        display: block;
+        width: 280px;
+        height: 70px;
+        margin-bottom: 15px;
+        .metodo {
+            position: relative;
+            display: inline-block;
+            width: 25%;
+            height: 100%;
+            float: left;
+            &:after {
+                -webkit-transform: translate(-50%, -50%) scale(0.2);
+                -ms-transform: translate(-50%, -50%) scale(0.2);
+                transform: translate(-50%, -50%) scale(0.2);
+            }
+            &.oxxo {
+                &:after {
+                    background-position: -906px -204px;
+                    width: 230px;
+                    height: 121px;
+                }
+                &.seleccionado,
+                &:hover {
+                    &:after {
+                        background-position: -905px -25px;
+                    }
+                }
+            }
+            &.credito {
+                &:after {
+                    background-position: -1411px -193px;
+                    width: 177px;
+                    height: 140px;
+                }
+                &.seleccionado,
+                &:hover {
+                    &:after {
+                        background-position: -1412px -12px;
+                    }
+                }
+            }
+            &.paypal {
+                &:after {
+                    background-position: -550px -218px;
+                    width: 312px;
+                    height: 88px;
+                }
+                &.seleccionado,
+                &:hover {
+                    &:after {
+                        background-position: -550px -39px;
+                    }
+                }
+            }
+            &.efectivo {
+                &:after {
+                    background-position: -1190px -194px;
+                    width: 165px;
+                    height: 145px;
+                }
+                &.seleccionado,
+                &:hover {
+                    &:after {
+                        background-position: -1191px -15px;
+                    }
+                }
+            }
+        }
+    }
+    .detalles-tarjeta {
+        display: none;
+        > div {
+            margin-bottom: 10px;
+        }
+        #expiracion-mes,
+        #expiracion-anio,
+        #cvv {
+            text-align: center;
+        }
+        #expiracion-mes,
+        #expiracion-anio {
+            width: 25px;
+        }
+        #cvv {
+            width: 30px;
+        }
+        #confirmar {
+            background: $verde;
+            border: none;
+            @include border-radius(3px);
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            margin-top: 15px;
+        }
+        .tipo-tarjeta {
+            position: relative;
+            padding: 10px 30px;
+            &.visa,
+            &.mastercard,
+            &.amex {
+                &:after {
+                    -webkit-transform: translate(-50%, -50%) scale(0.2);
+                    -ms-transform: translate(-50%, -50%) scale(0.2);
+                    transform: translate(-50%, -50%) scale(0.2);
+                }
+            }
+            &.visa {
+                &:after {
+                    background-position: 0 0;
+                    width: 245px;
+                    height: 170px;
+                }
+            }
+            &.mastercard {
+                &:after {
+                    background-position: -244px -38px;
+                    width: 265px;
+                    height: 90px;
+                }
+            }
+            &.amex {
+                &:after {
+                    background-position: -1666px -30px;
+                    width: 187px;
+                    height: 121px;
+                }
+            }
+        }
+    }
+}
+
+.datos-envio-y-compra {
+    @include desktop {
+        width: calc(66.6% - 50px);
+        margin-left: 50px;
+    }
+    h2 {
+        font-style: italic;
+    }
+    .datos-envio {
+        margin-bottom: 15px;
+        .dato-envio {
+            padding-bottom: 3px;
+            span:first-child {
+                color: $gris;
+                font-style: italic;
+            }
+        }
+    }
+    .resumen-compra {
+        margin-bottom: 35px;
+        .item {
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed $gris;
+            .dato-item {
+                padding-bottom: 3px;
+                span:first-child {
+                    color: $gris;
+                    font-style: italic;
+                }
+            }
+        }
+        .total {
+            span {
+                font-weight: bold;
+                @include desktop {
+                    font-size: 16px;
+                }
+                &:nth-child(2) {
+                    font-size: 16px;
+                    color: $verde;
+                    @include desktop {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
